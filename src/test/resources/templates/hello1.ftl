@@ -8,18 +8,23 @@
         body {
             font-family: pingfang sc light;
         }
+        .center{
+            text-align: center;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
 <!--第一页开始-->
 <div class="page" >
-    <div>report_template</div>
-    <div>姓名:${name}</div>
-    <div>年龄:${age}</div>
-    <div>成绩:</div>
-    <#list scores as item>
-        <div>${item}</div>
-    </#list>
+    <div class="center"><p>${templateName}</p></div>
+    <div><p>FreeMarker官网:${freeMarkerUrl}</p></div>
+    <!--外部链接-->
+    <p>静态logo图</p>
+    <div>
+        <img src="${imageUrl}" width="500" height="300"/>
+    </div>
+    <!--动态生成的图片-->
 
 </div>
 <!--第一页结束-->
@@ -28,7 +33,13 @@
 <!--第二页开始-->
 <div class="page">
     <div>第二页开始了</div>
-    <img src="${imageUrl}" alt="百度图标" width="270" height="129"/>
+    <div>列表值:</div>
+    <div>
+    <#list scores as item>
+        <div><p>${item}</p></div>
+    </#list>
+    </div>
+
 </div>
 
 
