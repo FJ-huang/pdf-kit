@@ -102,7 +102,7 @@ public class PDFKit {
     /**
      * @description PDF文件生成
      */
-    private  void convertToPDF(PdfWriter writer,Document document,String htmlString){
+    private void convertToPDF(PdfWriter writer,Document document,String htmlString){
         //获取字体路径
         String fontPath=getFontPath();
         document.open();

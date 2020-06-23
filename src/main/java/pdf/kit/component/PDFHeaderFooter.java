@@ -1,14 +1,16 @@
 package pdf.kit.component;
 
-import com.itextpdf.text.Document;
-import com.itextpdf.text.Element;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.Phrase;
+import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfTemplate;
 import com.itextpdf.text.pdf.PdfWriter;
 import pdf.kit.component.builder.HeaderFooterBuilder;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by fgm on 2017/4/22.
@@ -31,21 +33,30 @@ public class PDFHeaderFooter implements HeaderFooterBuilder {
         if (data == null) {
             return;
         }
-        int pageS = writer.getPageNumber();
-        int currentPage = pageS - 1;
-        if (currentPage <= 0) {
+        List list = null;
+        try {
+            Field contentPage = data.getClass().getDeclaredField("contentPage");
+            contentPage.setAccessible(true);
+            list = (ArrayList) contentPage.get(data);
+        } catch (Exception ex) {
+
+        }
+        if (list == null){
             return;
         }
-        Phrase footer1 = new Phrase("页脚一", font);
-        Phrase footer2 = new Phrase("页脚二" + "    " + currentPage + "/", font);
+        int pageS = list.size();
+        int currentPage = writer.getCurrentPageNumber();
+        Phrase footer1 = new Phrase(currentPage + "/" + pageS, font);
+        Date date = new Date();
+        Phrase footer2 = new Phrase("Created with LocateAlpha on " + date, font);
 
         PdfContentByte cb = writer.getDirectContent();
         ColumnText.showTextAligned(
                 cb,
                 Element.ALIGN_LEFT,
                 footer1,
-                (document.left() + 10),
-                document.bottom() - 20,
+                (document.left() + 220),
+                document.bottom() + 10,
                 0);
         ColumnText.showTextAligned(
                 cb,
