@@ -34,6 +34,7 @@ public class PDFKit {
     public String exportToFile(String fileName,Object data){
 
         String htmlData= FreeMarkerUtil.getContent(fileName, data);
+        log.info(htmlData);
         if(StringUtils.isEmpty(saveFilePath)){
             saveFilePath=getDefaultSavePath(fileName);
         }

@@ -109,16 +109,16 @@
     <div class="page">
         <!-- 标题 -->
         <div class="title">
-            <p>${page.templateName}</p>
+            <p>${page.title}</p>
         </div>
         <div>
-            <p class="subtitle">${page.freeMarkerUrl}</p>
+            <p class="subtitle">${page.subTitle}</p>
         </div>
 
         <!--图片栏目-->
         <div class="center">
             <div style=" width:110px; float: left; display: inline-block;"></div>
-            <#list page.picUrlList as item>
+            <#list page.picUrl as item>
                 <div class="div-b">
                     <img src="${item}"/>
                 </div>
@@ -128,7 +128,7 @@
         <!-- 描述栏 -->
         <div>
             <div style=" width:110px; float: left; display: inline-block;"></div>
-            <#list page.descList as item>
+            <#list page.desc as item>
                 <div style="display: inline-block; float: left; width: 100px; border: 100px">
                     <p style="font-size: 9px; text-align: right">
                         ${item}
@@ -149,13 +149,13 @@
             </tr>
             <tr class="data-tr-nocolor">
                 <td style="width: 130px; text-align: left">Rehab Costs</td>
-                <#list page.offerPrice as item>
+                <#list page.rehabCosts as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-color">
                 <td style="width: 130px; text-align: left">Estimated Monthly Rent</td>
-                <#list page.offerPrice as item>
+                <#list page.estimatedMonthlyRent as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
@@ -167,43 +167,43 @@
             </tr>
             <tr class="data-tr-color-small">
                 <td style="width: 130px; text-align: left; ">&nbsp;&nbsp;&nbsp;Property Tax</td>
-                <#list page.offerPrice as item>
+                <#list page.propertyTax as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
                 <td style="width: 130px; text-align: left; text-indent: -5px">&nbsp;&nbsp;&nbsp;Management Fees</td>
-                <#list page.offerPrice as item>
+                <#list page.managementFees as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
                 <td style="width: 130px; text-align: left">&nbsp;&nbsp;&nbsp;HOA</td>
-                <#list page.offerPrice as item>
+                <#list page.hoa as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
                 <td style="width: 130px; text-align: left">&nbsp;&nbsp;&nbsp;Insurance</td>
-                <#list page.offerPrice as item>
+                <#list page.insurance as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
                 <td style="width: 130px; text-align: left">&nbsp;&nbsp;&nbsp;Maintenance</td>
-                <#list page.offerPrice as item>
+                <#list page.maintenance as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
                 <td style="width: 130px; text-align: left">&nbsp;&nbsp;&nbsp;Listing Fees</td>
-                <#list page.offerPrice as item>
+                <#list page.listingFees as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
                 <td style="width: 130px; text-align: left">&nbsp;&nbsp;&nbsp;Vacancy Expense</td>
-                <#list page.offerPrice as item>
+                <#list page.vacancyExpense as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
@@ -211,19 +211,19 @@
                 <td style="width: 130px; text-align: left;">&nbsp;&nbsp;&nbsp;Capex Reserve
                     Contribution
                 </td>
-                <#list page.offerPrice as item>
+                <#list page.capexReserveContribution as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-color">
                 <td style="width: 130px; text-align: left">Net Operating Income</td>
-                <#list page.offerPrice as item>
+                <#list page.netOperatingIncome as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor">
                 <td style="width: 130px; text-align: left;">Cap Rate</td>
-                <#list page.offerPrice as item>
+                <#list page.capRate as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
@@ -236,7 +236,7 @@
             <tbody>
             <tr class="data-tr-color-v2">
                 <td style="width: 130px; text-align: left">Household Income</td>
-                <#list page.offerPrice as item>
+                <#list page.income as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
@@ -245,31 +245,31 @@
             </tr>
             <tr class="data-tr-color-small-v2">
                 <td style="width: 130px; text-align: left">&nbsp;&nbsp;&nbsp;Asian</td>
-                <#list page.offerPrice as item>
+                <#list page.asian as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
                 <td style="width: 130px; text-align: left">&nbsp;&nbsp;&nbsp;Black</td>
-                <#list page.offerPrice as item>
+                <#list page.black as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small-v2">
                 <td style="width: 130px; text-align: left">&nbsp;&nbsp;&nbsp;Hispanic</td>
-                <#list page.offerPrice as item>
+                <#list page.hispanic as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
                 <td style="width: 130px; text-align: left">&nbsp;&nbsp;&nbsp;White</td>
-                <#list page.offerPrice as item>
+                <#list page.white as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-v2">
                 <td style="width: 150px; text-align: left">5-Year Population Growth</td>
-                <#list page.offerPrice as item>
+                <#list page.pop5yr as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
@@ -278,7 +278,7 @@
             </tr>
             <tr class="data-tr-color-small-v2">
                 <td style="width: 130px; text-align: left">&nbsp;&nbsp;&nbsp;Bachelor’s and Above</td>
-                <#list page.offerPrice as item>
+                <#list page.bachelor as item>
                     <td style="width: 120px;">${item}</td>
                 </#list>
             </tr>
@@ -286,6 +286,17 @@
         </table>
     </div>
     <!--第一页结束-->
+    <span style="page-break-after:always;"></span>
+    <div class="page">
+        <div>第二页开始了</div>
+        <div>列表值:</div>
+        <div>
+                <div><p>2</p></div>
+            <div><p>2</p></div><div><p>2</p></div>
+
+        </div>
+
+    </div>
     <span style="page-break-after:always;"></span>
 </#list>
 
