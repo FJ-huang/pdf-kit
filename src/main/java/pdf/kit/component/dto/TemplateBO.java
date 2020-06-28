@@ -24,9 +24,12 @@ public class TemplateBO {
     private List<String> bedroomsTotal;
     private List<String> livingArea;
     private List<String> desc;
+
+    // page 1
     private List<String> offerPrice;
     private List<String> rehabCosts;
     private List<String> estimatedMonthlyRent;
+    private List<String> yearlyExpense;
     private List<String> propertyTax;
     private List<String> managementFees;
     private List<String> hoa;
@@ -44,5 +47,61 @@ public class TemplateBO {
     private List<String> white;
     private List<String> pop5yr;
     private List<String> bachelor;
-    
+
+    // page 2
+    // todo 无此对应字段
+    private List<String> overallScore;
+
+    private List<String> demand;
+
+    private List<String> walk;
+
+    private List<String> retail;
+
+    private List<String> current_;
+
+    private List<String> future;
+
+    // todo 无此对应字段
+    private List<String> schoolAvg;
+
+    private List<String> elememt;
+
+    private List<String> middle;
+
+    private List<String> high;
+
+    // todo 无此对应字段
+    private List<String> supply;
+
+    private List<String> short_;
+
+    private List<String> mid;
+
+    private List<String> long_;
+
+    // todo 无此对应字段
+    private List<String> performance;
+
+    private List<String> BlockPortCapRate;
+
+    private List<String> apprecia;
+
+    private List<String> return_;
+
+    private List<String> risk;
+
+    private List<String> neighbor;
+
+    private List<String> pricev;
+
+    private List<String> crime;
+
+    private List<String> stress;
+
+    private List<String> vote;
+
+    private List<String> growth;
+
+    private List<String> loss;
 }

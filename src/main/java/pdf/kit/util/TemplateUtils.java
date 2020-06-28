@@ -1,9 +1,8 @@
 package pdf.kit.util;
 
-import com.alibaba.fastjson.JSONObject;
+import pdf.kit.component.dto.BlockPortfolio;
 import pdf.kit.component.dto.ListHubJsonDetailPlus;
 import pdf.kit.component.dto.TemplateBO;
-import pdf.kit.component.dto.TemplatePage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +26,7 @@ public class TemplateUtils {
         List<String> offerPrice = new ArrayList<String>();
         List<String> rehabCosts = new ArrayList<String>();
         List<String> estimatedMonthlyRent = new ArrayList<String>();
+        List<String> yearlyExpense = new ArrayList<String>();
         List<String> propertyTax = new ArrayList<String>();
         List<String> managementFees = new ArrayList<String>();
         List<String> hoa = new ArrayList<String>();
@@ -46,9 +46,36 @@ public class TemplateUtils {
         List<String> bachelor = new ArrayList<String>();
         List<String> desc = new ArrayList<String>();
 
-        for (ListHubJsonDetailPlus item : data) {
-            picUrl.add(getValue(item.getMedia().get(0).getMediaURL()));
+        List<String> overallScore = new ArrayList<String>();
+        List<String> demand = new ArrayList<String>();
+        List<String> retail = new ArrayList<String>();
+        List<String> walk = new ArrayList<String>();
+        List<String> current_ = new ArrayList<String>();
+        List<String> future = new ArrayList<String>();
+        List<String> schoolAvg = new ArrayList<String>();
+        List<String> elememt = new ArrayList<String>();
+        List<String> middle = new ArrayList<String>();
+        List<String> high = new ArrayList<String>();
+        List<String> supply = new ArrayList<String>();
+        List<String> short_ = new ArrayList<String>();
+        List<String> mid = new ArrayList<String>();
+        List<String> long_ = new ArrayList<String>();
+        List<String> performance = new ArrayList<String>();
+        List<String> BlockPortCapRate = new ArrayList<String>();
+        List<String> apprecia = new ArrayList<String>();
+        List<String> return_ = new ArrayList<String>();
+        List<String> risk = new ArrayList<String>();
+        List<String> neighbor = new ArrayList<String>();
+        List<String> pricev = new ArrayList<String>();
+        List<String> crime = new ArrayList<String>();
+        List<String> stress = new ArrayList<String>();
+        List<String> vote = new ArrayList<String>();
+        List<String> growth = new ArrayList<String>();
+        List<String> loss = new ArrayList<String>();
 
+        for (ListHubJsonDetailPlus item : data) {
+            // page 1
+            picUrl.add(getValue(item.getMedia().get(0).getMediaURL()));
             unparsedAddress.add(getValue(item.getUnparsedAddress()));
             countyOrParish.add(getValue(item.getCountyOrParish()));
             stateOrProvince.add(getValue(item.getStateOrProvince()));
@@ -57,11 +84,11 @@ public class TemplateUtils {
             bathroomsFull.add(getValue(item.getBathroomsFull()));
             bedroomsTotal.add(getValue(item.getBedroomsTotal()));
             livingArea.add(getValue(item.getLivingArea()));
-            desc.add(getValue(item.getUnparsedAddress()) + getValue(item.getCountyOrParish() + "," + getValue(item.getStateOrProvince()) + " " + getValue(item.getPostalCode()) + getValue(item.getListPrice()) + getValue(item.getBathroomsFull()) + "bd | " + getValue(item.getBedroomsTotal()) +"ba | " + getValue(item.getLivingArea()) + "Sq ft"));
-
+            desc.add(getValue(item.getUnparsedAddress()) + "\n" + getValue(item.getCountyOrParish() + "," + getValue(item.getStateOrProvince()) + " " + getValue(item.getPostalCode()) + "\n" + "$" + getValue(item.getListPrice()) + "\n" + getValue(item.getBathroomsFull()) + " bd | " + getValue(item.getBedroomsTotal()) +"ba | " + getValue(item.getLivingArea()) + "Sq ft"));
             offerPrice.add(getValue(item.getOpportunity().getEstimate().getOfferPrice()));
             rehabCosts.add(getValue(item.getOpportunity().getEstimate().getRehabCosts()));
             estimatedMonthlyRent.add(getValue(item.getOpportunity().getEstimate().getEstimatedMonthlyRent()));
+            yearlyExpense.add(getValue(item.getOpportunity().getEstimate().getYearlyExpense()));
             propertyTax.add(getValue(item.getOpportunity().getEstimate().getPropertyTax()));
             managementFees.add(getValue(item.getOpportunity().getEstimate().getManagementFees()));
             hoa.add(getValue(item.getOpportunity().getEstimate().getHoa()));
@@ -74,14 +101,54 @@ public class TemplateUtils {
             capRate.add(getValue(item.getOpportunity().getEstimate().getCapRate()));
             income.add(getValue(item.getBlockPortfolio().getIncome()));
             asian.add(getValue(item.getBlockPortfolio().getAsian()));
-            black.add(getValue(item.getBlockPortfolio().getBlack()));
-            hispanic.add(getValue(item.getBlockPortfolio().getHispanic()));
-            white.add(getValue(item.getBlockPortfolio().getWhite()));
-            pop5yr.add(getValue(item.getBlockPortfolio().getPop5yr()));
-            bachelor.add(getValue(item.getBlockPortfolio().getBachelor()));
+            BlockPortfolio blockPortfolio = item.getBlockPortfolio();
+            if (item.getBlockPortfolio() == null){
+                black.add("");
+                hispanic.add("");
+                white.add("");
+                pop5yr.add("");
+                bachelor.add("");
+            } else {
+                black.add(getValue(blockPortfolio.getBlack()));
+                hispanic.add(getValue(blockPortfolio.getHispanic()));
+                white.add(getValue(blockPortfolio.getWhite()));
+                pop5yr.add(getValue(blockPortfolio.getPop5yr()));
+                bachelor.add(getValue(blockPortfolio.getBachelor()));
+
+                //page 2
+                // todo 暂无此字段
+                overallScore.add("");
+                demand.add(getValue(blockPortfolio.getDemand()));
+                retail.add(getValue(blockPortfolio.getRetail()));
+                walk.add(getValue(blockPortfolio.getWalk()));
+                current_.add(getValue(blockPortfolio.getReturn_()));
+                future.add(getValue(blockPortfolio.getFuture()));
+                // todo 暂无此字段
+                schoolAvg.add("");
+                elememt.add(getValue(blockPortfolio.getElememt()));
+                middle.add(getValue(blockPortfolio.getMiddle()));
+                high.add(getValue(blockPortfolio.getHigh()));
+                supply.add(getValue(blockPortfolio.getSupply()));
+                short_.add(getValue(blockPortfolio.getShort_()));
+                mid.add(getValue(blockPortfolio.getMid()));
+                long_.add(getValue(blockPortfolio.getLong_()));
+                performance.add(getValue(blockPortfolio.getPerform()));
+                BlockPortCapRate.add(getValue(blockPortfolio.getCapRate()));
+                apprecia.add(getValue(blockPortfolio.getApprecia()));
+                return_.add(getValue(blockPortfolio.getReturn_()));
+                risk.add(getValue(blockPortfolio.getRisk()));
+                neighbor.add(getValue(blockPortfolio.getNeighbor()));
+                pricev.add(getValue(blockPortfolio.getPricev()));
+                crime.add(getValue(blockPortfolio.getCrime()));
+                stress.add(getValue(blockPortfolio.getStress()));
+                vote.add(getValue(blockPortfolio.getVote()));
+                growth.add(getValue(blockPortfolio.getGrowth()));
+                loss.add(getValue(blockPortfolio.getLoss()));
+            }
+
 
         }
-
+        // page 1
         templateBO.setPicUrl(picUrl);
         templateBO.setUnparsedAddress(unparsedAddress);
         templateBO.setCountyOrParish(countyOrParish);
@@ -94,6 +161,7 @@ public class TemplateUtils {
         templateBO.setOfferPrice(offerPrice);
         templateBO.setRehabCosts(rehabCosts);
         templateBO.setEstimatedMonthlyRent(estimatedMonthlyRent);
+        templateBO.setYearlyExpense(yearlyExpense);
         templateBO.setPropertyTax(propertyTax);
         templateBO.setManagementFees(managementFees);
         templateBO.setHoa(hoa);
@@ -112,6 +180,35 @@ public class TemplateUtils {
         templateBO.setPop5yr(pop5yr);
         templateBO.setBachelor(bachelor);
         templateBO.setDesc(desc);
+
+        //page 2
+        templateBO.setOverallScore(overallScore);
+        templateBO.setDemand(demand);
+        templateBO.setRetail(retail);
+        templateBO.setWalk(walk);
+        templateBO.setCurrent_(current_);
+        templateBO.setFuture(future);
+        templateBO.setSchoolAvg(schoolAvg);
+        templateBO.setElememt(elememt);
+        templateBO.setMiddle(middle);
+        templateBO.setHigh(high);
+        templateBO.setSupply(supply);
+        templateBO.setShort_(short_);
+        templateBO.setMid(mid);
+        templateBO.setLong_(long_);
+        templateBO.setPerformance(performance);
+        templateBO.setBlockPortCapRate(BlockPortCapRate);
+        templateBO.setApprecia(apprecia);
+        templateBO.setReturn_(return_);
+        templateBO.setRisk(risk);
+        templateBO.setNeighbor(neighbor);
+        templateBO.setPricev(pricev);
+        templateBO.setCrime(crime);
+        templateBO.setStress(stress);
+        templateBO.setVote(vote);
+        templateBO.setGrowth(growth);
+        templateBO.setLoss(loss);
+
         return templateBO;
     }
 

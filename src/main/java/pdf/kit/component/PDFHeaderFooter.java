@@ -44,7 +44,7 @@ public class PDFHeaderFooter implements HeaderFooterBuilder {
         if (list == null){
             return;
         }
-        int pageS = list.size();
+        int pageS = list.size() * 2;
         int currentPage = writer.getCurrentPageNumber();
         Phrase footer1 = new Phrase(currentPage + "/" + pageS, font);
         Date date = new Date();
