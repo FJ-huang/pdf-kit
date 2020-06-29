@@ -84,7 +84,7 @@ public class TemplateUtils {
             bathroomsFull.add(getValue(item.getBathroomsFull()));
             bedroomsTotal.add(getValue(item.getBedroomsTotal()));
             livingArea.add(getValue(item.getLivingArea()));
-            desc.add(getValue(item.getUnparsedAddress()) + "\n" + getValue(item.getCountyOrParish() + "," + getValue(item.getStateOrProvince()) + " " + getValue(item.getPostalCode()) + "\n" + "$" + getValue(item.getListPrice()) + "\n" + getValue(item.getBathroomsFull()) + " bd | " + getValue(item.getBedroomsTotal()) +"ba | " + getValue(item.getLivingArea()) + "Sq ft"));
+            desc.add("<p>" + getValue(item.getUnparsedAddress()) + "</p><p>" + getValue(item.getCountyOrParish() + "," + getValue(item.getStateOrProvince()) + " " + getValue(item.getPostalCode()) + "</p><p>$" + getValue(item.getListPrice()) + "</p><p>" + getValue(item.getBathroomsFull()) + " bd | " + getValue(item.getBedroomsTotal()) +"ba | " + getValue(item.getLivingArea()) + " Sq ft</p>"));
             offerPrice.add(getValue(item.getOpportunity().getEstimate().getOfferPrice()));
             rehabCosts.add(getValue(item.getOpportunity().getEstimate().getRehabCosts()));
             estimatedMonthlyRent.add(getValue(item.getOpportunity().getEstimate().getEstimatedMonthlyRent()));

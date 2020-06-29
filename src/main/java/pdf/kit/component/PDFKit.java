@@ -2,6 +2,7 @@ package pdf.kit.component;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.tool.xml.XMLWorkerFontProvider;
 import com.itextpdf.tool.xml.XMLWorkerHelper;
@@ -47,7 +48,9 @@ public class PDFKit {
             //设置输出路径
             outputStream=new FileOutputStream(saveFilePath);
             //设置文档大小
-            Document document = new Document(PageSize.A4);
+            Rectangle pageSize = new Rectangle(PageSize.A4.getHeight(), PageSize.A4.getWidth());
+            pageSize.rotate();
+            Document document = new Document(pageSize);
             PdfWriter writer = PdfWriter.getInstance(document, outputStream);
 
             //设置页眉页脚
