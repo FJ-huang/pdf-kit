@@ -7,6 +7,7 @@
     <style type="text/css">
         .center {
             text-align: center;
+            width: 100%;
         }
 
         .title {
@@ -15,6 +16,8 @@
             height: 50px;
             background-color: lavenderblush;
             font-weight: bolder;
+            display: inline-block;
+            float: left;
         }
 
         .subtitle {
@@ -27,16 +30,10 @@
         }
 
         .div-b {
-            width: 100px;
+            width: 110px;
             float: right;
             display: inline-block;
             border-radius: 15px;
-        }
-
-        .div-c {
-            width: 58px;
-            float: right;
-            display: inline-block;
         }
 
         table {
@@ -123,30 +120,34 @@
             <p class="subtitle">${page.subTitle}</p>
         </div>
 
-        <!--图片栏-->
-        <div class="center">
-            <#list page.picUrl as item>
-                <div class="div-b">
-                    <img src="${item}"/>
-                </div>
-                <div class="div-c"></div>
-            </#list>
-        </div>
-        <!-- 描述栏 -->
-        <div>
-            <#list page.desc as item>
-                <div style="display: inline-block; float: right; width: 100px;">
-                    <p style="font-size: 9px; text-align: right; line-height: 4px">
-                        ${item}
-                    </p>
-                </div>
-                <div class="div-c"></div>
-            </#list>
-        </div>
-
         <!-- 数据表格栏 -->
         <table>
             <tbody>
+            <!--图片栏-->
+            <tr>
+                <td class="head-td"></td>
+                <#list page.picUrl as item>
+                    <td class="item-td">
+                        <div class="div-b">
+                            <img style="float:right;" src="${item}"/>
+                        </div>
+                    </td>
+                </#list>
+            </tr>
+            <tr>
+                <!-- 描述栏 -->
+                <td class="head-td"></td>
+                <#list page.desc as item>
+                    <td class="item-td">
+                        <div style="display: inline-block; float: right; width: 100px;">
+                            <p style="font-size: 9px; text-align: right; line-height: 4px">
+                                ${item}
+                            </p>
+                        </div>
+                    </td>
+                </#list>
+            </tr>
+
             <tr class="data-tr-color">
                 <td class="head-td">Offer Price</td>
                 <#list page.offerPrice as item>
@@ -304,29 +305,32 @@
             <p class="subtitle">${page.subTitle}</p>
         </div>
 
-        <!--图片栏目-->
-        <div class="center">
-            <div style=" width:110px; float: left; display: inline-block;"></div>
-            <#list page.picUrl as item>
-                <div class="div-b">
-                    <img src="${item}"/>
-                </div>
-                <div class="div-c"></div>
-            </#list>
-        </div>
-        <!-- 描述栏 -->
-        <div>
-            <#list page.desc as item>
-                <div style="display: inline-block; float: right; width: 100px;">
-                    <p style="font-size: 9px; text-align: right; line-height: 4px">
-                        ${item}
-                    </p>
-                </div>
-                <div class="div-c"></div>
-            </#list>
-        </div>
         <table>
             <tbody>
+            <!--图片栏-->
+            <tr>
+                <td class="head-td"></td>
+                <#list page.picUrl as item>
+                <td class="item-td">
+                    <div class="div-b">
+                        <img style="float:right;" src="${item}"/>
+                    </div>
+                </td>
+                </#list>
+            </tr>
+            <tr>
+                <!-- 描述栏 -->
+                <td class="head-td"></td>
+                <#list page.desc as item>
+                    <td class="item-td">
+                        <div style="display: inline-block; float: right; width: 100px;">
+                            <p style="font-size: 9px; text-align: right; line-height: 4px">
+                                ${item}
+                            </p>
+                        </div>
+                    </td>
+                </#list>
+            </tr>
             <tr class="data-tr-color">
                 <td class="head-td">Overall Score</td>
                 <#list page.overallScore as item>
@@ -336,20 +340,29 @@
             <tr class="data-tr-nocolor">
                 <td class="head-td">Demand</td>
                 <#list page.demand as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                    <td class="item-td">
+                        <img style="vertical-align: center;" width="60px"; height="8px"; src="/Users/hyp/Desktop/score.jpg"/>
+                        &nbsp;&nbsp;${item}&nbsp;&nbsp;
+                    </td>
                 </#list>
             </tr>
 
             <tr class="data-tr-color-small">
                 <td style="width: 130px; text-align: left; ">&nbsp;&nbsp;&nbsp;WalkAbility</td>
                 <#list page.walk as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                    <td class="item-td">
+                        <img style="vertical-align: center;" width="8px"; height="8px"; src="/Users/hyp/Desktop/go.jpg"/>
+                        &nbsp;&nbsp;${item}&nbsp;&nbsp;
+                    </td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
                 <td style="width: 130px; text-align: left; text-indent: -5px">&nbsp;&nbsp;&nbsp;Retail</td>
                 <#list page.retail as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                    <td class="item-td">
+                        <img style="vertical-align: center;" width="8px"; height="8px"; src="/Users/hyp/Desktop/go.jpg"/>
+                        &nbsp;&nbsp;${item}&nbsp;&nbsp;
+                    </td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
