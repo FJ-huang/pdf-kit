@@ -47,7 +47,7 @@ public class PDFBuilder extends PdfPageEventHelper {
     }
 
     public PDFBuilder(HeaderFooterBuilder headerFooterBuilder, Object data) {
-       this(headerFooterBuilder,data,"ping_fang_light.ttf");
+       this(headerFooterBuilder,data,"IBMPlexSans-Light.ttf");
     }
     public PDFBuilder(HeaderFooterBuilder headerFooterBuilder, Object data, String fontFileName) {
        this(headerFooterBuilder,data,fontFileName,12);
@@ -93,8 +93,8 @@ public class PDFBuilder extends PdfPageEventHelper {
         if(headerFooterBuilder !=null){
             template.beginText();
             template.setFontAndSize(bf,fontSize);
-            String replace= headerFooterBuilder.getReplaceOfTemplate(writer,document,data);
-            template.showText(replace);
+            // String replace= headerFooterBuilder.getReplaceOfTemplate(writer,document,data);
+            // template.showText(replace);
             template.endText();
             template.closePath();
         }

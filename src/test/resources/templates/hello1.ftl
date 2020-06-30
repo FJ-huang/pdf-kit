@@ -5,24 +5,31 @@
     <title></title>
     <meta http-equiv="Content-Style-Type" content="text/css"/>
     <style type="text/css">
-        .center {
-            text-align: center;
-            width: 100%;
-        }
-
         .title {
             text-align: center;
+            vertical-align: center;
             width: 100%;
-            height: 50px;
             background-color: lavenderblush;
-            font-weight: bolder;
-            display: inline-block;
-            float: left;
+        }
+
+        .title-p {
+            font-size: 15px;
+            font-family: IBMPlexSerif-Bold, IBMPlexSerif;
+            color: rgba(0, 0, 0, 1);
         }
 
         .subtitle {
-            font-size: 13px;
+            font-size: 12px;
+            font-family: IBMPlexSans;
+            color: rgba(0, 0, 0, 1);
             text-align: center;
+        }
+
+        .desc-td {
+            font-family: IBMPlexSans;
+            font-size: 9px;
+            text-align: right;
+            line-height: 3px;
         }
 
         img {
@@ -30,7 +37,7 @@
         }
 
         .div-b {
-            width: 110px;
+            width: 120px;
             float: right;
             display: inline-block;
             border-radius: 15px;
@@ -45,66 +52,64 @@
         }
 
         .data-tr-color {
-            font-size: 10px;
+            font-size: 9px;
             font-weight: bold;
-            height: 18px;
-            line-height: 30px;
             color: black;
             text-align: center;
             background-color: #d6f2f1
         }
 
         .data-tr-color-v2 {
-            font-size: 10px;
+            font-size: 9px;
             font-weight: bold;
-            height: 18px;
-            line-height: 30px;
             color: black;
             text-align: center;
             background-color: #EBF5EC
         }
 
         .data-tr-nocolor {
-            font-size: 10px;
+            font-size: 9px;
             font-weight: bold;
-            height: 18px;
-            line-height: 30px;
             color: black;
             text-align: center;
         }
 
         .data-tr-color-small {
+            text-align: left;
+            background-color: #d6f2f1;
+
             font-size: 9px;
-            height: 17px;
-            line-height: 30px;
-            color: grey;
-            text-align: center;
-            background-color: #d6f2f1
+            font-family: IBMPlexSans;
+            color: rgba(0, 0, 0, 1);
         }
 
         .data-tr-color-small-v2 {
+            text-align: left;
+            background-color: #EBF5EC;
             font-size: 9px;
-            height: 17px;
-            line-height: 30px;
-            color: grey;
-            text-align: center;
-            background-color: #EBF5EC
+            font-family: IBMPlexSans;
+            color: rgba(0, 0, 0, 1);
         }
 
         .data-tr-nocolor-small {
+            text-align: left;
             font-size: 9px;
-            height: 17px;
-            line-height: 30px;
-            color: grey;
-            text-align: center;
+            font-family: IBMPlexSans;
+            color: rgba(0, 0, 0, 1);
         }
+
         .item-td {
-            width: 16%;
+            height: 16px;
             text-align: right;
         }
+
         .head-td {
-            width: 25%;
+            width: 15%;
             text-align: left;
+            font-size: 9px;
+            font-family: IBMPlexSans-Medium, IBMPlexSans;
+            font-weight: bolder;
+            color: rgba(0, 0, 0, 1);
         }
     </style>
 </head>
@@ -114,7 +119,7 @@
         <!--第一页开始-->
         <!-- 标题 -->
         <div class="title">
-            <p>${page.title}</p>
+            <p class="title-p">${page.title}</p>
         </div>
         <div>
             <p class="subtitle">${page.subTitle}</p>
@@ -140,7 +145,7 @@
                 <#list page.desc as item>
                     <td class="item-td">
                         <div style="display: inline-block; float: right; width: 100px;">
-                            <p style="font-size: 9px; text-align: right; line-height: 4px">
+                            <p class="desc-td">
                                 ${item}
                             </p>
                         </div>
@@ -173,49 +178,49 @@
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
-                <td style="width: 130px; text-align: left; ">&nbsp;&nbsp;&nbsp;Property Tax</td>
+                <td>&nbsp;&nbsp;&nbsp;Property Tax</td>
                 <#list page.propertyTax as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td style="width: 130px; text-align: left; text-indent: -5px">&nbsp;&nbsp;&nbsp;Management Fees</td>
+                <td>&nbsp;&nbsp;&nbsp;Management Fees</td>
                 <#list page.managementFees as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;HOA</td>
+                <td>&nbsp;&nbsp;&nbsp;HOA</td>
                 <#list page.hoa as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Insurance</td>
+                <td>&nbsp;&nbsp;&nbsp;Insurance</td>
                 <#list page.insurance as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Maintenance</td>
+                <td>&nbsp;&nbsp;&nbsp;Maintenance</td>
                 <#list page.maintenance as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Listing Fees</td>
+                <td>&nbsp;&nbsp;&nbsp;Listing Fees</td>
                 <#list page.listingFees as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Vacancy Expense</td>
+                <td>&nbsp;&nbsp;&nbsp;Vacancy Expense</td>
                 <#list page.vacancyExpense as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td style="width: 130px; text-align: left;">&nbsp;&nbsp;&nbsp;Capex Reserve
+                <td>&nbsp;&nbsp;&nbsp;Capex Reserve
                     Contribution
                 </td>
                 <#list page.capexReserveContribution as item>
@@ -229,7 +234,7 @@
                 </#list>
             </tr>
             <tr class="data-tr-nocolor">
-                <td style="width: 130px; text-align: left;">Cap Rate</td>
+                <td class="head-td">Cap Rate</td>
                 <#list page.capRate as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
@@ -237,7 +242,7 @@
             </tbody>
         </table>
 
-        <div style="height: 30px"></div>
+        <div style="height: 13px"></div>
 
         <table>
             <tbody>
@@ -248,43 +253,43 @@
                 </#list>
             </tr>
             <tr class="data-tr-nocolor">
-                <td style="text-align: left">Ethnicity</td>
+                <td class="head-td">Ethnicity</td>
             </tr>
             <tr class="data-tr-color-small-v2">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Asian</td>
+                <td>&nbsp;&nbsp;&nbsp;Asian</td>
                 <#list page.asian as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Black</td>
+                <td>&nbsp;&nbsp;&nbsp;Black</td>
                 <#list page.black as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small-v2">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Hispanic</td>
+                <td>&nbsp;&nbsp;&nbsp;Hispanic</td>
                 <#list page.hispanic as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;White</td>
+                <td>&nbsp;&nbsp;&nbsp;White</td>
                 <#list page.white as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-v2">
-                <td style="width: 150px; text-align: left">5-Year Population Growth</td>
+                <td class="head-td">5-Year Population Growth</td>
                 <#list page.pop5yr as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor">
-                <td style="text-align: left">Educational Attainment</td>
+                <td class="head-td">Educational Attainment</td>
             </tr>
             <tr class="data-tr-color-small-v2">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Bachelor’s and Above</td>
+                <td>&nbsp;&nbsp;&nbsp;Bachelor’s and Above</td>
                 <#list page.bachelor as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
@@ -299,7 +304,7 @@
     <!-- 标题 -->
     <div class="page">
         <div class="title">
-            <p>${page.title}</p>
+            <p class="title-p">${page.title}</p>
         </div>
         <div>
             <p class="subtitle">${page.subTitle}</p>
@@ -311,11 +316,11 @@
             <tr>
                 <td class="head-td"></td>
                 <#list page.picUrl as item>
-                <td class="item-td">
-                    <div class="div-b">
-                        <img style="float:right;" src="${item}"/>
-                    </div>
-                </td>
+                    <td class="item-td">
+                        <div class="div-b">
+                            <img style="float:right;" src="${item}"/>
+                        </div>
+                    </td>
                 </#list>
             </tr>
             <tr>
@@ -341,7 +346,8 @@
                 <td class="head-td">Demand</td>
                 <#list page.demand as item>
                     <td class="item-td">
-                        <img style="vertical-align: center;" width="60px"; height="8px"; src="/Users/hyp/Desktop/score.jpg"/>
+                        <img style="vertical-align: center;" width="60px" ; height="8px" ;
+                             src="/Users/hyp/Desktop/score.jpg"/>
                         &nbsp;&nbsp;${item}&nbsp;&nbsp;
                     </td>
                 </#list>
@@ -351,7 +357,8 @@
                 <td style="width: 130px; text-align: left; ">&nbsp;&nbsp;&nbsp;WalkAbility</td>
                 <#list page.walk as item>
                     <td class="item-td">
-                        <img style="vertical-align: center;" width="8px"; height="8px"; src="/Users/hyp/Desktop/go.jpg"/>
+                        <img style="vertical-align: center;" width="8px" ; height="8px" ;
+                             src="/Users/hyp/Desktop/go.jpg"/>
                         &nbsp;&nbsp;${item}&nbsp;&nbsp;
                     </td>
                 </#list>
@@ -360,7 +367,8 @@
                 <td style="width: 130px; text-align: left; text-indent: -5px">&nbsp;&nbsp;&nbsp;Retail</td>
                 <#list page.retail as item>
                     <td class="item-td">
-                        <img style="vertical-align: center;" width="8px"; height="8px"; src="/Users/hyp/Desktop/go.jpg"/>
+                        <img style="vertical-align: center;" width="8px" ; height="8px" ;
+                             src="/Users/hyp/Desktop/go.jpg"/>
                         &nbsp;&nbsp;${item}&nbsp;&nbsp;
                     </td>
                 </#list>
@@ -372,31 +380,31 @@
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Jobs-Future</td>
+                <td>&nbsp;&nbsp;&nbsp;Jobs-Future</td>
                 <#list page.future as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;School (Avg.)</td>
+                <td>&nbsp;&nbsp;&nbsp;School (Avg.)</td>
                 <#list page.schoolAvg as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Elementary School</td>
+                <td>&nbsp;&nbsp;&nbsp;Elementary School</td>
                 <#list page.elememt as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Middle School</td>
+                <td>&nbsp;&nbsp;&nbsp;Middle School</td>
                 <#list page.middle as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;High School</td>
+                <td>&nbsp;&nbsp;&nbsp;High School</td>
                 <#list page.high as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
@@ -409,19 +417,19 @@
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Short-Term</td>
+                <td>&nbsp;&nbsp;&nbsp;Short-Term</td>
                 <#list page.short_ as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Mid-Term</td>
+                <td>&nbsp;&nbsp;&nbsp;Mid-Term</td>
                 <#list page.mid as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Long-Term</td>
+                <td>&nbsp;&nbsp;&nbsp;Long-Term</td>
                 <#list page.long_ as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
@@ -434,19 +442,19 @@
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Cap Rate</td>
+                <td>&nbsp;&nbsp;&nbsp;Cap Rate</td>
                 <#list page.blockPortCapRate as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Annual Appreciation</td>
+                <td>&nbsp;&nbsp;&nbsp;Annual Appreciation</td>
                 <#list page.apprecia as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;5-year Total Return</td>
+                <td>&nbsp;&nbsp;&nbsp;5-year Total Return</td>
                 <#list page.return_ as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
@@ -460,43 +468,43 @@
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Neighborhood Changee</td>
+                <td>&nbsp;&nbsp;&nbsp;Neighborhood Changee</td>
                 <#list page.neighbor as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Market Stability</td>
+                <td>&nbsp;&nbsp;&nbsp;Market Stability</td>
                 <#list page.pricev as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Crime</td>
+                <td>&nbsp;&nbsp;&nbsp;Crime</td>
                 <#list page.crime as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Economic Stress</td>
+                <td>&nbsp;&nbsp;&nbsp;Economic Stress</td>
                 <#list page.stress as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Voting Patterns</td>
+                <td>&nbsp;&nbsp;&nbsp;Voting Patterns</td>
                 <#list page.vote as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Growth Trend</td>
+                <td>&nbsp;&nbsp;&nbsp;Growth Trend</td>
                 <#list page.growth as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor-small">
-                <td class="head-td">&nbsp;&nbsp;&nbsp;Loss Risk</td>
+                <td>&nbsp;&nbsp;&nbsp;Loss Risk</td>
                 <#list page.loss as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
