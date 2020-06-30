@@ -27,20 +27,18 @@
 
         .desc-td {
             font-family: IBMPlexSans;
-            font-size: 9px;
+            font-size: 10px;
             text-align: right;
             line-height: 3px;
         }
 
-        img {
-            border-radius: 10px;
-        }
-
-        .div-b {
-            width: 120px;
-            float: right;
+        .img-td {
             display: inline-block;
-            border-radius: 15px;
+            float: right;
+            font-size:12px;
+            font-weight:bold;
+            letter-spacing:7px;
+            font-family: IBMPlexSans-ExtraLightItalic;
         }
 
         table {
@@ -52,7 +50,7 @@
         }
 
         .data-tr-color {
-            font-size: 9px;
+            font-size: 10px;
             font-weight: bold;
             color: black;
             text-align: center;
@@ -60,7 +58,7 @@
         }
 
         .data-tr-color-v2 {
-            font-size: 9px;
+            font-size: 10px;
             font-weight: bold;
             color: black;
             text-align: center;
@@ -68,7 +66,7 @@
         }
 
         .data-tr-nocolor {
-            font-size: 9px;
+            font-size: 10px;
             font-weight: bold;
             color: black;
             text-align: center;
@@ -78,7 +76,7 @@
             text-align: left;
             background-color: #d6f2f1;
 
-            font-size: 9px;
+            font-size: 10px;
             font-family: IBMPlexSans;
             color: rgba(0, 0, 0, 1);
         }
@@ -86,27 +84,27 @@
         .data-tr-color-small-v2 {
             text-align: left;
             background-color: #EBF5EC;
-            font-size: 9px;
+            font-size: 10px;
             font-family: IBMPlexSans;
             color: rgba(0, 0, 0, 1);
         }
 
         .data-tr-nocolor-small {
             text-align: left;
-            font-size: 9px;
+            font-size: 10px;
             font-family: IBMPlexSans;
             color: rgba(0, 0, 0, 1);
         }
 
         .item-td {
-            height: 16px;
+            height: 18px;
             text-align: right;
         }
 
         .head-td {
             width: 15%;
             text-align: left;
-            font-size: 9px;
+            font-size: 10px;
             font-family: IBMPlexSans-Medium, IBMPlexSans;
             font-weight: bolder;
             color: rgba(0, 0, 0, 1);
@@ -132,9 +130,12 @@
             <tr>
                 <td class="head-td"></td>
                 <#list page.picUrl as item>
-                    <td class="item-td">
-                        <div class="div-b">
-                            <img style="float:right;" src="${item}"/>
+                    <td class="img-td">
+                        <div>
+                            <img width="110px" src="${item}"/>
+                        </div>
+                        <div>
+                            <p>${item_index + 1}</p>
                         </div>
                     </td>
                 </#list>
@@ -316,9 +317,12 @@
             <tr>
                 <td class="head-td"></td>
                 <#list page.picUrl as item>
-                    <td class="item-td">
-                        <div class="div-b">
-                            <img style="float:right;" src="${item}"/>
+                    <td class="img-td">
+                        <div>
+                            <img width="110px" src="${item}"/>
+                        </div>
+                        <div>
+                            <p>${item_index + 1}</p>
                         </div>
                     </td>
                 </#list>
@@ -346,7 +350,7 @@
                 <td class="head-td">Demand</td>
                 <#list page.demand as item>
                     <td class="item-td">
-                        <img style="vertical-align: center;" width="60px" ; height="8px" ;
+                        <img style="vertical-align: center;" width="60px" ; height="10px" ;
                              src="/Users/hyp/Desktop/score.jpg"/>
                         &nbsp;&nbsp;${item}&nbsp;&nbsp;
                     </td>
@@ -357,7 +361,7 @@
                 <td style="width: 130px; text-align: left; ">&nbsp;&nbsp;&nbsp;WalkAbility</td>
                 <#list page.walk as item>
                     <td class="item-td">
-                        <img style="vertical-align: center;" width="8px" ; height="8px" ;
+                        <img style="vertical-align: center;" width="10px" ; height="10px" ;
                              src="/Users/hyp/Desktop/go.jpg"/>
                         &nbsp;&nbsp;${item}&nbsp;&nbsp;
                     </td>
@@ -367,7 +371,7 @@
                 <td style="width: 130px; text-align: left; text-indent: -5px">&nbsp;&nbsp;&nbsp;Retail</td>
                 <#list page.retail as item>
                     <td class="item-td">
-                        <img style="vertical-align: center;" width="8px" ; height="8px" ;
+                        <img style="vertical-align: center;" width="10px" ; height="10px" ;
                              src="/Users/hyp/Desktop/go.jpg"/>
                         &nbsp;&nbsp;${item}&nbsp;&nbsp;
                     </td>
@@ -394,7 +398,10 @@
             <tr class="data-tr-nocolor-small">
                 <td>&nbsp;&nbsp;&nbsp;Elementary School</td>
                 <#list page.elememt as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                    <td class="item-td">
+                        <img width="10px" ; height="10px"; src="/Users/hyp/Desktop/green.jpg"/>
+                        &nbsp;&nbsp;${item}&nbsp;&nbsp;
+                    </td>
                 </#list>
             </tr>
             <tr class="data-tr-color-small">
