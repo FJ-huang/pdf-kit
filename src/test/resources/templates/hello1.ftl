@@ -9,17 +9,19 @@
             text-align: center;
             vertical-align: center;
             width: 100%;
-            background-color: lavenderblush;
+            height: 46px;
+            background: #F5F5F5;
         }
 
         .title-p {
-            font-size: 15px;
+            font-size: 14px;
             font-family: IBMPlexSerif-Bold, IBMPlexSerif;
+            font-weight: bold;
             color: rgba(0, 0, 0, 1);
         }
 
         .subtitle {
-            font-size: 12px;
+            font-size: 10px;
             font-family: IBMPlexSans;
             color: rgba(0, 0, 0, 1);
             text-align: center;
@@ -35,9 +37,9 @@
         .img-td {
             display: inline-block;
             float: right;
-            font-size:12px;
-            font-weight:bold;
-            letter-spacing:7px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 7px;
             font-family: IBMPlexSans-ExtraLightItalic;
         }
 
@@ -54,7 +56,7 @@
             font-weight: bold;
             color: black;
             text-align: center;
-            background-color: #d6f2f1
+            background-color: #EBF9FF
         }
 
         .data-tr-color-v2 {
@@ -74,7 +76,7 @@
 
         .data-tr-color-small {
             text-align: left;
-            background-color: #d6f2f1;
+            background-color: #EBF9FF;
 
             font-size: 10px;
             font-family: IBMPlexSans;
@@ -97,12 +99,13 @@
         }
 
         .item-td {
+            width: 124px;
             height: 18px;
             text-align: right;
         }
 
         .head-td {
-            width: 15%;
+            width: 140px;
             text-align: left;
             font-size: 10px;
             font-family: IBMPlexSans-Medium, IBMPlexSans;
@@ -124,18 +127,15 @@
         </div>
 
         <!-- 数据表格栏 -->
+
         <table>
-            <tbody>
             <!--图片栏-->
             <tr>
                 <td class="head-td"></td>
                 <#list page.picUrl as item>
                     <td class="img-td">
                         <div>
-                            <img width="110px" src="${item}"/>
-                        </div>
-                        <div>
-                            <p>${item_index + 1}</p>
+                            <img width="135px" height="80px" src="${item}"/>
                         </div>
                     </td>
                 </#list>
@@ -153,7 +153,15 @@
                     </td>
                 </#list>
             </tr>
-
+        </table>
+<#--        <p style="width:15px;height:110px;font-size:12px;font-family:IBMPlexSerif-Bold;font-weight:bold;color:rgba(0,0,0,1);line-height:15px;letter-spacing: 2px;">Block Data</p>-->
+        <table>
+            <tbody>
+            <div style="height:252px; display: inline-block; float: left; background-color: #EBF9FF;">
+                <img width="12px" height="135px" src="/Users/hyp/Desktop/1.jpg" alt=""/>
+            </div>
+            <div style="height:252px; width:6px; display: inline-block; float: left; background-color: white;">
+            </div>
             <tr class="data-tr-color">
                 <td class="head-td">Offer Price</td>
                 <#list page.offerPrice as item>
@@ -243,10 +251,14 @@
             </tbody>
         </table>
 
-        <div style="height: 13px"></div>
+        <div style="height: 13px;"></div>
 
         <table>
             <tbody>
+            <div style="height:152px; width: 12px display: inline-block; float: left; background-color: #EBF5EC;">
+            </div>
+            <div style="height:152px; width:6px; display: inline-block; float: left; background-color: white;">
+            </div>
             <tr class="data-tr-color-v2">
                 <td class="head-td">Household Income</td>
                 <#list page.income as item>
@@ -312,17 +324,13 @@
         </div>
 
         <table>
-            <tbody>
             <!--图片栏-->
             <tr>
                 <td class="head-td"></td>
                 <#list page.picUrl as item>
                     <td class="img-td">
                         <div>
-                            <img width="110px" src="${item}"/>
-                        </div>
-                        <div>
-                            <p>${item_index + 1}</p>
+                            <img width="135px" height="80px" src="${item}"/>
                         </div>
                     </td>
                 </#list>
@@ -333,13 +341,19 @@
                 <#list page.desc as item>
                     <td class="item-td">
                         <div style="display: inline-block; float: right; width: 100px;">
-                            <p style="font-size: 9px; text-align: right; line-height: 4px">
+                            <p class="desc-td">
                                 ${item}
                             </p>
                         </div>
                     </td>
                 </#list>
             </tr>
+        </table>
+        <table>
+            <tbody>
+            <div style="height:468px; width: 15px; display: inline-block; float: left; background-color: #EBF9FF;">
+                <img width="10px" height="90px" src="/Users/hyp/Desktop/2.jpg" alt=""/>
+            </div>
             <tr class="data-tr-color">
                 <td class="head-td">Overall Score</td>
                 <#list page.overallScore as item>
@@ -399,7 +413,7 @@
                 <td>&nbsp;&nbsp;&nbsp;Elementary School</td>
                 <#list page.elememt as item>
                     <td class="item-td">
-                        <img width="10px" ; height="10px"; src="/Users/hyp/Desktop/green.jpg"/>
+                        <img width="10px" ; height="10px" ; src="/Users/hyp/Desktop/green.jpg"/>
                         &nbsp;&nbsp;${item}&nbsp;&nbsp;
                     </td>
                 </#list>

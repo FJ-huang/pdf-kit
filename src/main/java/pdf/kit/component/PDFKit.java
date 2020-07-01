@@ -47,9 +47,9 @@ public class PDFKit {
             //设置输出路径
             outputStream = new FileOutputStream(saveFilePath);
             //设置文档大小
-            Rectangle pageSize = new Rectangle(PageSize.LETTER_LANDSCAPE.getHeight(), PageSize.LETTER_LANDSCAPE.getWidth());
+            Rectangle pageSize = new Rectangle(PageSize.LETTER.getHeight(), PageSize.LETTER.getWidth());
             pageSize.rotate();
-            Document document = new Document(pageSize);
+            Document document = new Document(pageSize, 26, 26,24,24);
             PdfWriter writer = PdfWriter.getInstance(document, outputStream);
 
             //设置页眉页脚

@@ -5,7 +5,6 @@ import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfTemplate;
 import com.itextpdf.text.pdf.PdfWriter;
-import org.apache.commons.lang.time.DateUtils;
 import pdf.kit.component.builder.HeaderFooterBuilder;
 
 import java.lang.reflect.Field;
@@ -60,17 +59,16 @@ public class PDFHeaderFooter implements HeaderFooterBuilder {
         ColumnText.showTextAligned(
                 cb,
                 Element.ALIGN_LEFT,
-                footer1,
-                (document.left() + 330),
+                footer2,
+                (document.left() ),
                 document.bottom(),
                 0);
         ColumnText.showTextAligned(
                 cb,
                 Element.ALIGN_RIGHT,
-                footer2,
-                (document.right() - 35),
+                footer1,
+                (document.right()),
                 document.bottom(), 0);
-
         //设置模板位置
         cb.addTemplate(template, document.right() - 30, document.bottom() - 20);
 
