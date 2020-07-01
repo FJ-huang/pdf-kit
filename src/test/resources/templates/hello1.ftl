@@ -10,7 +10,7 @@
             vertical-align: center;
             width: 100%;
             height: 46px;
-            background: #F5F5F5;
+            /*background: #F5F5F5;*/
         }
 
         .title-p {

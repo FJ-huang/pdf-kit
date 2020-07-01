@@ -79,7 +79,9 @@ public class PDFBuilder extends PdfPageEventHelper {
             //1.初始化字体
             initFront();
             //2.写入页眉
-            // headerFooterBuilder.writeHeader(writer,document,data,fontDetail,template);
+            // String classpath= PDFBuilder.class.getClassLoader().getResource("").getPath();
+            String classpath="/Users/hyp/pdf-kit/target/test-classes/";
+            headerFooterBuilder.writeHeaderImg(writer,"title.png", classpath, document);
             //3.写入前半部分页脚
             headerFooterBuilder.writeFooter(writer,document,data,fontDetail,template);
         }

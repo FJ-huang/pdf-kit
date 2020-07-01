@@ -25,4 +25,6 @@ public interface HeaderFooterBuilder {
      */
     String  getReplaceOfTemplate(PdfWriter writer, Document document, Object data);
 
+    void writeHeaderImg(PdfWriter writer, String s, String c,  Document document);
+
 }

@@ -6,7 +6,9 @@ import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfTemplate;
 import com.itextpdf.text.pdf.PdfWriter;
 import pdf.kit.component.builder.HeaderFooterBuilder;
+import pdf.kit.component.builder.PDFBuilder;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -110,4 +112,37 @@ public class PDFHeaderFooter implements HeaderFooterBuilder {
         return total + "";
     }
 
+    // pdf添加图片
+    public void writeHeaderImg(PdfWriter writer,
+                            String fileName, String classpath, Document document) {
+        String imgPath = classpath + "image/" + fileName;
+
+        PdfContentByte waterMar = writer.getDirectContentUnder();
+        Image image = null;
+        Rectangle rect = null;
+        try {
+            image = Image.getInstance(imgPath);
+            // 设置坐标 绝对位置 X Y
+            image.setAbsolutePosition(665, 555);
+            //自定义大小
+            image.scaleAbsolute(90, 24);
+
+            rect = new Rectangle(765,40);
+            rect.setBackgroundColor(new BaseColor(245, 245, 245, 1));
+            rect.setBorder(10);
+            rect.setLeft(26);
+            rect.setTop(585);
+            rect.setBottom(555);
+            //结束设置
+            // waterMar.stroke();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            document.add(rect);
+            document.add(image);
+        } catch (DocumentException e) {
+
+        }
+    }
 }
