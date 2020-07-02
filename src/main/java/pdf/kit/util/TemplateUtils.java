@@ -1,5 +1,6 @@
 package pdf.kit.util;
 
+import pdf.kit.component.builder.PDFBuilder;
 import pdf.kit.component.dto.BlockPortfolio;
 import pdf.kit.component.dto.ListHubJsonDetailPlus;
 import pdf.kit.component.dto.TemplateBO;
@@ -13,6 +14,8 @@ import java.util.List;
  * @Description TODO
  */
 public class TemplateUtils {
+    public static final String path =  PDFBuilder.class.getClassLoader().getResource("").getPath();
+
     public static TemplateBO jsonToBean(List<ListHubJsonDetailPlus> data, TemplateBO templateBO) {
          List<String> picUrl = new ArrayList<String>();
         List<String> unparsedAddress = new ArrayList<String>();
@@ -118,32 +121,35 @@ public class TemplateUtils {
                 //page 2
                 // todo 暂无此字段
                 overallScore.add("");
-                demand.add(getValue(blockPortfolio.getDemand()));
-                retail.add(getValue(blockPortfolio.getRetail()));
-                walk.add(getValue(blockPortfolio.getWalk()));
-                current_.add(getValue(blockPortfolio.getReturn_()));
-                future.add(getValue(blockPortfolio.getFuture()));
+                demand.add(getImgPath(blockPortfolio.getDemand(), "type1-rect"));
+                retail.add(getImgPath(blockPortfolio.getRetail(), "type1-cycle"));
+                walk.add(getImgPath(blockPortfolio.getWalk(), "type1-cycle"));
+                current_.add(getImgPath(blockPortfolio.getReturn_(), "type1-cycle"));
+                future.add(getImgPath(blockPortfolio.getFuture(), "type1-cycle"));
                 // todo 暂无此字段
                 schoolAvg.add("");
-                elememt.add(getValue(blockPortfolio.getElememt()));
-                middle.add(getValue(blockPortfolio.getMiddle()));
-                high.add(getValue(blockPortfolio.getHigh()));
-                supply.add(getValue(blockPortfolio.getSupply()));
-                short_.add(getValue(blockPortfolio.getShort_()));
-                mid.add(getValue(blockPortfolio.getMid()));
-                long_.add(getValue(blockPortfolio.getLong_()));
-                performance.add(getValue(blockPortfolio.getPerform()));
-                BlockPortCapRate.add(getValue(blockPortfolio.getCapRate()));
-                apprecia.add(getValue(blockPortfolio.getApprecia()));
-                return_.add(getValue(blockPortfolio.getReturn_()));
-                risk.add(getValue(blockPortfolio.getRisk()));
-                neighbor.add(getValue(blockPortfolio.getNeighbor()));
-                pricev.add(getValue(blockPortfolio.getPricev()));
-                crime.add(getValue(blockPortfolio.getCrime()));
-                stress.add(getValue(blockPortfolio.getStress()));
-                vote.add(getValue(blockPortfolio.getVote()));
-                growth.add(getValue(blockPortfolio.getGrowth()));
-                loss.add(getValue(blockPortfolio.getLoss()));
+                elememt.add(getImgPath(blockPortfolio.getElememt(), "type1-cycle"));
+                middle.add(getImgPath(blockPortfolio.getMiddle(), "type1-cycle"));
+                high.add(getImgPath(blockPortfolio.getHigh(), "type1-cycle"));
+
+                supply.add(getImgPath(blockPortfolio.getSupply(), "type1-rect"));
+                short_.add(getImgPath(blockPortfolio.getShort_(), "type2-cycle"));
+                mid.add(getImgPath(blockPortfolio.getMid(), "type2-cycle"));
+                long_.add(getImgPath(blockPortfolio.getLong_(), "type2-cycle"));
+
+                performance.add(getImgPath(blockPortfolio.getPerform(), "type1-rect"));
+                BlockPortCapRate.add(getImgPath(blockPortfolio.getCapRate(), "type1-cycle"));
+                apprecia.add(getImgPath(blockPortfolio.getApprecia(), "type1-cycle"));
+                return_.add(getImgPath(blockPortfolio.getReturn_(), "type1-cycle"));
+
+                risk.add(getImgPath(blockPortfolio.getRisk(), "type1-rect"));
+                neighbor.add(getImgPath(blockPortfolio.getNeighbor(), "type2-cycle"));
+                pricev.add(getImgPath(blockPortfolio.getPricev(), "type2-cycle"));
+                crime.add(getImgPath(blockPortfolio.getCrime(), "type2-cycle"));
+                stress.add(getImgPath(blockPortfolio.getStress(), "type2-cycle"));
+                vote.add(getImgPath(blockPortfolio.getVote(), "type2-cycle"));
+                growth.add(getImgPath(blockPortfolio.getGrowth(), "type2-cycle"));
+                loss.add(getImgPath(blockPortfolio.getLoss(), "type2-cycle"));
             }
 
 
@@ -216,6 +222,17 @@ public class TemplateUtils {
         return object != null ? object.toString() : "";
     }
 
+    public static String getImgPath(Object object, String type) {
+        String score = object.toString();
+        if (score == null || "".equalsIgnoreCase(score)) {
+            return "";
+        }
+        String imgPath = path + "image/score/" + type + "/" + score + ".png";
+        if (type.endsWith("rect")) {
+            return "<img src=\"" + imgPath + "\"/>&nbsp;" + score;
+        }
+        return "<img width=\"9px\" src=\"" + imgPath + "\"/>&nbsp;" + score;
+    }
 
     public static <T> List<List<T>> fixedGrouping(List<T> source, int n) {
 

@@ -117,13 +117,12 @@ public class PDFHeaderFooter implements HeaderFooterBuilder {
                             String fileName, String classpath, Document document) {
         String imgPath = classpath + "image/" + fileName;
 
-        PdfContentByte waterMar = writer.getDirectContentUnder();
         Image image = null;
         Rectangle rect = null;
         try {
             image = Image.getInstance(imgPath);
             // 设置坐标 绝对位置 X Y
-            image.setAbsolutePosition(665, 555);
+            image.setAbsolutePosition(670, 558);
             //自定义大小
             image.scaleAbsolute(90, 24);
 
@@ -133,8 +132,7 @@ public class PDFHeaderFooter implements HeaderFooterBuilder {
             rect.setLeft(26);
             rect.setTop(585);
             rect.setBottom(555);
-            //结束设置
-            // waterMar.stroke();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

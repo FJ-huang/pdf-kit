@@ -10,7 +10,6 @@
             vertical-align: center;
             width: 100%;
             height: 46px;
-            /*background: #F5F5F5;*/
         }
 
         .title-p {
@@ -21,7 +20,7 @@
         }
 
         .subtitle {
-            font-size: 10px;
+            font-size: 12px;
             font-family: IBMPlexSans;
             color: rgba(0, 0, 0, 1);
             text-align: center;
@@ -112,6 +111,22 @@
             font-weight: bolder;
             color: rgba(0, 0, 0, 1);
         }
+
+        .data-tr-color-v3 {
+            font-size: 10px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            background-color: #F2F2F7
+        }
+
+        .data-tr-color-small-v3 {
+            text-align: left;
+            background-color: #F2F2F7;
+            font-size: 10px;
+            font-family: IBMPlexSans;
+            color: rgba(0, 0, 0, 1);
+        }
     </style>
 </head>
 <body>
@@ -154,7 +169,8 @@
                 </#list>
             </tr>
         </table>
-<#--        <p style="width:15px;height:110px;font-size:12px;font-family:IBMPlexSerif-Bold;font-weight:bold;color:rgba(0,0,0,1);line-height:15px;letter-spacing: 2px;">Block Data</p>-->
+<#--        <p style="width:15px;height:110px;font-size:12px;font-family:IBMPlexSerif-Bold;font-weight:bold;color:rgba(0,0,0,1);line-height:15px;letter-spacing: 2px;">Special-->
+<#--        </p>-->
         <table>
             <tbody>
             <div style="height:252px; display: inline-block; float: left; background-color: #EBF9FF;">
@@ -251,13 +267,12 @@
             </tbody>
         </table>
 
-        <div style="height: 13px;"></div>
-
         <table>
             <tbody>
-            <div style="height:152px; width: 12px display: inline-block; float: left; background-color: #EBF5EC;">
+            <div style="height:144px; width: 12px; display: inline-block; float: left; background-color: #EBF5EC;">
+                <img width="12px" height="90px" src="/Users/hyp/Desktop/3.jpg" alt=""/>
             </div>
-            <div style="height:152px; width:6px; display: inline-block; float: left; background-color: white;">
+            <div style="height:140px; width:6px; display: inline-block; float: left; background-color: white;">
             </div>
             <tr class="data-tr-color-v2">
                 <td class="head-td">Household Income</td>
@@ -266,7 +281,7 @@
                 </#list>
             </tr>
             <tr class="data-tr-nocolor">
-                <td class="head-td">Ethnicity</td>
+                <td class="head-td" style="height: 18px">Ethnicity</td>
             </tr>
             <tr class="data-tr-color-small-v2">
                 <td>&nbsp;&nbsp;&nbsp;Asian</td>
@@ -293,20 +308,48 @@
                 </#list>
             </tr>
             <tr class="data-tr-color-v2">
-                <td class="head-td">5-Year Population Growth</td>
+                <td class="head-td">Population Growth</td>
                 <#list page.pop5yr as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
             <tr class="data-tr-nocolor">
-                <td class="head-td">Educational Attainment</td>
-            </tr>
-            <tr class="data-tr-color-small-v2">
-                <td>&nbsp;&nbsp;&nbsp;Bachelor’s and Above</td>
+                <td class="head-td">Bachelor’s Above</td>
                 <#list page.bachelor as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
+            </tbody>
+        </table>
+
+<#--        <div style="height: 10px;"></div>-->
+
+        <table>
+            <tbody>
+            <div style="height:55px; width: 12px; display: inline-block; float: left; background-color: #F2F2F7;">
+                <img width="12px" height="55px" src="/Users/hyp/Desktop/4.jpg" alt=""/>
+            </div>
+            <div style="height:55px; width:6px; display: inline-block; float: left; background-color: white;">
+            </div>
+            <tr class="data-tr-color-v3">
+                <td class="head-td">Opportunity Zones</td>
+                <#list page.income as item>
+                    <td class="item-td">Yes&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor">
+                <td class="head-td">Gentrification</td>
+                <#list page.income as item>
+                    <td class="item-td">Yes&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-v3">
+                <td class="head-td">Empty-Nesters</td>
+                <#list page.income as item>
+                    <td class="item-td">No&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+
             </tbody>
         </table>
     </div>
@@ -351,47 +394,106 @@
         </table>
         <table>
             <tbody>
-            <div style="height:468px; width: 15px; display: inline-block; float: left; background-color: #EBF9FF;">
-                <img width="10px" height="90px" src="/Users/hyp/Desktop/2.jpg" alt=""/>
+            <div style="height:470px; width: 12px; display: inline-block; float: left; background-color: #F2F2F7;">
+                <img width="12px" height="90px" src="/Users/hyp/Desktop/2.jpg" alt=""/>
             </div>
-            <tr class="data-tr-color">
+            <div style="height:470px; width:6px; display: inline-block; float: left; background-color: white;">
+            </div>
+
+            <tr class="data-tr-color-v3">
                 <td class="head-td">Overall Score</td>
                 <#list page.overallScore as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
+
+            <tr class="data-tr-nocolor">
+                <td class="head-td">Performance</td>
+                <#list page.performance as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-small-v3">
+                <td>&nbsp;&nbsp;&nbsp;Avg.Cap Rate</td>
+                <#list page.blockPortCapRate as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td>&nbsp;&nbsp;&nbsp;Avg.Annual Appreciation</td>
+                <#list page.apprecia as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-small-v3">
+                <td>&nbsp;&nbsp;&nbsp;Avg.5-year Total Return</td>
+                <#list page.return_ as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td>&nbsp;&nbsp;&nbsp;Avg.House Price</td>
+                <#list page.return_ as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+
+
+            <tr class="data-tr-color-v3">
+                <td class="head-td">Risk</td>
+                <#list page.risk as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td>&nbsp;&nbsp;&nbsp;Neighborhood Changee</td>
+                <#list page.neighbor as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-small-v3">
+                <td>&nbsp;&nbsp;&nbsp;Market Stability</td>
+                <#list page.pricev as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td>&nbsp;&nbsp;&nbsp;Crime</td>
+                <#list page.crime as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-small-v3">
+                <td>&nbsp;&nbsp;&nbsp;Economic Stress</td>
+                <#list page.stress as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td>&nbsp;&nbsp;&nbsp;Regulatory Risk</td>
+                <#list page.vote as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-small-v3">
+                <td>&nbsp;&nbsp;&nbsp;Property Loss Risk</td>
+                <#list page.loss as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+
+
             <tr class="data-tr-nocolor">
                 <td class="head-td">Demand</td>
                 <#list page.demand as item>
                     <td class="item-td">
-                        <img style="vertical-align: center;" width="60px" ; height="10px" ;
-                             src="/Users/hyp/Desktop/score.jpg"/>
-                        &nbsp;&nbsp;${item}&nbsp;&nbsp;
+                        &nbsp;${item}&nbsp;&nbsp;
                     </td>
                 </#list>
             </tr>
 
-            <tr class="data-tr-color-small">
-                <td style="width: 130px; text-align: left; ">&nbsp;&nbsp;&nbsp;WalkAbility</td>
-                <#list page.walk as item>
-                    <td class="item-td">
-                        <img style="vertical-align: center;" width="10px" ; height="10px" ;
-                             src="/Users/hyp/Desktop/go.jpg"/>
-                        &nbsp;&nbsp;${item}&nbsp;&nbsp;
-                    </td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td style="width: 130px; text-align: left; text-indent: -5px">&nbsp;&nbsp;&nbsp;Retail</td>
-                <#list page.retail as item>
-                    <td class="item-td">
-                        <img style="vertical-align: center;" width="10px" ; height="10px" ;
-                             src="/Users/hyp/Desktop/go.jpg"/>
-                        &nbsp;&nbsp;${item}&nbsp;&nbsp;
-                    </td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-small">
+
+            <tr class="data-tr-color-small-v3">
                 <td class="head-td">&nbsp;&nbsp;&nbsp;Jobs - Current</td>
                 <#list page.current_ as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
@@ -403,8 +505,24 @@
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
-            <tr class="data-tr-color-small">
-                <td>&nbsp;&nbsp;&nbsp;School (Avg.)</td>
+            <tr class="data-tr-color-small-v3">
+                <td style="width: 130px; text-align: left; text-indent: -5px">&nbsp;&nbsp;&nbsp;Retail</td>
+                <#list page.retail as item>
+                    <td class="item-td">
+                        ${item}&nbsp;&nbsp;
+                    </td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td style="width: 130px; text-align: left; ">&nbsp;&nbsp;&nbsp;Convenience</td>
+                <#list page.walk as item>
+                    <td class="item-td">
+                        ${item}&nbsp;&nbsp;
+                    </td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-small-v3">
+                <td>&nbsp;&nbsp;&nbsp;School Score</td>
                 <#list page.schoolAvg as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
@@ -413,12 +531,11 @@
                 <td>&nbsp;&nbsp;&nbsp;Elementary School</td>
                 <#list page.elememt as item>
                     <td class="item-td">
-                        <img width="10px" ; height="10px" ; src="/Users/hyp/Desktop/green.jpg"/>
-                        &nbsp;&nbsp;${item}&nbsp;&nbsp;
+                        ${item}&nbsp;&nbsp;
                     </td>
                 </#list>
             </tr>
-            <tr class="data-tr-color-small">
+            <tr class="data-tr-color-small-v3">
                 <td>&nbsp;&nbsp;&nbsp;Middle School</td>
                 <#list page.middle as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
@@ -431,7 +548,7 @@
                 </#list>
             </tr>
 
-            <tr class="data-tr-color">
+            <tr class="data-tr-color-v3">
                 <td class="head-td">Supply</td>
                 <#list page.supply as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
@@ -443,7 +560,7 @@
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
             </tr>
-            <tr class="data-tr-color-small">
+            <tr class="data-tr-color-small-v3">
                 <td>&nbsp;&nbsp;&nbsp;Mid-Term</td>
                 <#list page.mid as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
@@ -456,80 +573,6 @@
                 </#list>
             </tr>
 
-            <tr class="data-tr-color">
-                <td class="head-td">Performance</td>
-                <#list page.performance as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;Cap Rate</td>
-                <#list page.blockPortCapRate as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-small">
-                <td>&nbsp;&nbsp;&nbsp;Annual Appreciation</td>
-                <#list page.apprecia as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;5-year Total Return</td>
-                <#list page.return_ as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-
-
-            <tr class="data-tr-color">
-                <td class="head-td">Risk</td>
-                <#list page.risk as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;Neighborhood Changee</td>
-                <#list page.neighbor as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-small">
-                <td>&nbsp;&nbsp;&nbsp;Market Stability</td>
-                <#list page.pricev as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;Crime</td>
-                <#list page.crime as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-small">
-                <td>&nbsp;&nbsp;&nbsp;Economic Stress</td>
-                <#list page.stress as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;Voting Patterns</td>
-                <#list page.vote as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-small">
-                <td>&nbsp;&nbsp;&nbsp;Growth Trend</td>
-                <#list page.growth as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;Loss Risk</td>
-                <#list page.loss as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
             </tbody>
         </table>
     </div>
