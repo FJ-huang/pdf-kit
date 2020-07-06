@@ -37,20 +37,7 @@ public class PDFHeaderFooter implements HeaderFooterBuilder {
         if (data == null) {
             return;
         }
-        List list = null;
-        try {
-            Field contentPage = data.getClass().getDeclaredField("contentPage");
-            contentPage.setAccessible(true);
-            list = (ArrayList) contentPage.get(data);
-        } catch (Exception ex) {
 
-        }
-        if (list == null){
-            return;
-        }
-        int pageS = list.size() * 2;
-        int currentPage = writer.getCurrentPageNumber();
-        Phrase footer1 = new Phrase("Page " + currentPage + " of " + pageS, font);
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy hh:mm aa", Locale.ENGLISH);
         String format = sdf.format(date);
@@ -65,12 +52,6 @@ public class PDFHeaderFooter implements HeaderFooterBuilder {
                 (document.left() ),
                 document.bottom(),
                 0);
-        ColumnText.showTextAligned(
-                cb,
-                Element.ALIGN_RIGHT,
-                footer1,
-                (document.right()),
-                document.bottom(), 0);
         //设置模板位置
         cb.addTemplate(template, document.right() - 30, document.bottom() - 20);
 

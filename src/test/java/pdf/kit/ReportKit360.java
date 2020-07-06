@@ -51,6 +51,10 @@ public class ReportKit360 {
         List<ListHubJsonDetailPlus> data = jsonObject.getJSONArray("data").toJavaList(ListHubJsonDetailPlus.class);
 
         List<List<ListHubJsonDetailPlus>> lists = TemplateUtils.fixedGrouping(data, 5);
+        List<List<ListHubJsonDetailPlus>> listss = TemplateUtils.fixedGrouping(data, 5);
+        for (List<ListHubJsonDetailPlus> listHubJsonDetailPluses : listss) {
+            lists.add(listHubJsonDetailPluses);
+        }
         for (List<ListHubJsonDetailPlus> list : lists) {
             TemplateBO templateBO = new TemplateBO();
             templateBO.setTitle("Property Comparison Report for John Appleseed");

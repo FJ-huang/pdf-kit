@@ -132,233 +132,6 @@
 <body>
 <#list contentPage as page>
     <div class="page">
-        <!--第一页开始-->
-        <!-- 标题 -->
-        <div class="title">
-            <p class="title-p">${page.title}</p>
-        </div>
-        <div>
-            <p class="subtitle">${page.subTitle}</p>
-        </div>
-
-        <!-- 数据表格栏 -->
-
-        <table>
-            <!--图片栏-->
-            <tr>
-                <td class="head-td"></td>
-                <#list page.picUrl as item>
-                    <td class="img-td">
-                        <div>
-                            <img width="135px" height="80px" src="${item}"/>
-                        </div>
-                    </td>
-                </#list>
-            </tr>
-            <tr>
-                <!-- 描述栏 -->
-                <td class="head-td"></td>
-                <#list page.desc as item>
-                    <td class="item-td">
-                        <div style="display: inline-block; float: right; width: 100px;">
-                            <p class="desc-td">
-                                ${item}
-                            </p>
-                        </div>
-                    </td>
-                </#list>
-            </tr>
-        </table>
-<#--        <p style="width:15px;height:110px;font-size:12px;font-family:IBMPlexSerif-Bold;font-weight:bold;color:rgba(0,0,0,1);line-height:15px;letter-spacing: 2px;">Special-->
-<#--        </p>-->
-        <table>
-            <tbody>
-            <div style="height:252px; display: inline-block; float: left; background-color: #EBF9FF;">
-                <img width="12px" height="135px" src="/Users/hyp/Desktop/1.jpg" alt=""/>
-            </div>
-            <div style="height:252px; width:6px; display: inline-block; float: left; background-color: white;">
-            </div>
-            <tr class="data-tr-color">
-                <td class="head-td">Offer Price</td>
-                <#list page.offerPrice as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor">
-                <td class="head-td">Rehab Costs</td>
-                <#list page.rehabCosts as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color">
-                <td class="head-td">Estimated Monthly Rent</td>
-                <#list page.estimatedMonthlyRent as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor">
-                <td class="head-td">Yearly Expense</td>
-                <#list page.yearlyExpense as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-small">
-                <td>&nbsp;&nbsp;&nbsp;Property Tax</td>
-                <#list page.propertyTax as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;Management Fees</td>
-                <#list page.managementFees as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-small">
-                <td>&nbsp;&nbsp;&nbsp;HOA</td>
-                <#list page.hoa as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;Insurance</td>
-                <#list page.insurance as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-small">
-                <td>&nbsp;&nbsp;&nbsp;Maintenance</td>
-                <#list page.maintenance as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;Listing Fees</td>
-                <#list page.listingFees as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-small">
-                <td>&nbsp;&nbsp;&nbsp;Vacancy Expense</td>
-                <#list page.vacancyExpense as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;Capex Reserve
-                    Contribution
-                </td>
-                <#list page.capexReserveContribution as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color">
-                <td class="head-td">Net Operating Income</td>
-                <#list page.netOperatingIncome as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor">
-                <td class="head-td">Cap Rate</td>
-                <#list page.capRate as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            </tbody>
-        </table>
-
-        <table>
-            <tbody>
-            <div style="height:144px; width: 12px; display: inline-block; float: left; background-color: #EBF5EC;">
-                <img width="12px" height="90px" src="/Users/hyp/Desktop/3.jpg" alt=""/>
-            </div>
-            <div style="height:140px; width:6px; display: inline-block; float: left; background-color: white;">
-            </div>
-            <tr class="data-tr-color-v2">
-                <td class="head-td">Household Income</td>
-                <#list page.income as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor">
-                <td class="head-td" style="height: 18px">Ethnicity</td>
-            </tr>
-            <tr class="data-tr-color-small-v2">
-                <td>&nbsp;&nbsp;&nbsp;Asian</td>
-                <#list page.asian as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;Black</td>
-                <#list page.black as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-small-v2">
-                <td>&nbsp;&nbsp;&nbsp;Hispanic</td>
-                <#list page.hispanic as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor-small">
-                <td>&nbsp;&nbsp;&nbsp;White</td>
-                <#list page.white as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-v2">
-                <td class="head-td">Population Growth</td>
-                <#list page.pop5yr as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor">
-                <td class="head-td">Bachelor’s Above</td>
-                <#list page.bachelor as item>
-                    <td class="item-td">${item}&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            </tbody>
-        </table>
-
-<#--        <div style="height: 10px;"></div>-->
-
-        <table>
-            <tbody>
-            <div style="height:55px; width: 12px; display: inline-block; float: left; background-color: #F2F2F7;">
-                <img width="12px" height="55px" src="/Users/hyp/Desktop/4.jpg" alt=""/>
-            </div>
-            <div style="height:55px; width:6px; display: inline-block; float: left; background-color: white;">
-            </div>
-            <tr class="data-tr-color-v3">
-                <td class="head-td">Opportunity Zones</td>
-                <#list page.income as item>
-                    <td class="item-td">Yes&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-nocolor">
-                <td class="head-td">Gentrification</td>
-                <#list page.income as item>
-                    <td class="item-td">Yes&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-            <tr class="data-tr-color-v3">
-                <td class="head-td">Empty-Nesters</td>
-                <#list page.income as item>
-                    <td class="item-td">No&nbsp;&nbsp;</td>
-                </#list>
-            </tr>
-
-            </tbody>
-        </table>
-    </div>
-    <span style="page-break-after:always;"></span>
-    <!--第一页结束-->
-
-    <!-- 第二页开始 -->
-    <!-- 标题 -->
-    <div class="page">
         <div class="title">
             <p class="title-p">${page.title}</p>
         </div>
@@ -394,14 +167,14 @@
         </table>
         <table>
             <tbody>
-            <div style="height:470px; width: 12px; display: inline-block; float: left; background-color: #F2F2F7;">
-                <img width="12px" height="90px" src="/Users/hyp/Desktop/2.jpg" alt=""/>
+            <div style="height:492px; width: 12px; display: inline-block; float: left; background-color: #F2F2F7;">
+                <img width="12px" height="85px" src="/Users/hyp/Desktop/5.jpg" alt=""/>
             </div>
-            <div style="height:470px; width:6px; display: inline-block; float: left; background-color: white;">
+            <div style="height:492px; width:6px; display: inline-block; float: left; background-color: white;">
             </div>
 
             <tr class="data-tr-color-v3">
-                <td class="head-td">Overall Score</td>
+                <td class="head-td">Overall</td>
                 <#list page.overallScore as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
@@ -571,6 +344,246 @@
                 <#list page.long_ as item>
                     <td class="item-td">${item}&nbsp;&nbsp;</td>
                 </#list>
+            </tr>
+            <tr class="data-tr-color-v3" style="height:18px; font-size:10px; font-family:IBMPlexSans-Medium,IBMP;">
+                <td colspan="4" style=" padding-left: 330px; text-align: center">
+                    Continued on Next Page
+                </td>
+
+                <td colspan="2" style="text-align: right">
+                    Page ${page_index * 2 + 1} of ${contentPage?size * 2}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <span style="page-break-after:always;"></span>
+    <!--第一页结束-->
+
+    <!-- 第二页开始 -->
+    <!-- 标题 -->
+    <div class="page">
+        <!--第一页开始-->
+        <!-- 标题 -->
+        <div class="title">
+            <p class="title-p">${page.title}</p>
+        </div>
+        <div>
+            <p class="subtitle">${page.subTitle}</p>
+        </div>
+
+        <!-- 数据表格栏 -->
+
+        <table>
+            <!--图片栏-->
+            <tr>
+                <td class="head-td"></td>
+                <#list page.picUrl as item>
+                    <td class="img-td">
+                        <div>
+                            <img width="135px" height="80px" src="${item}"/>
+                        </div>
+                    </td>
+                </#list>
+            </tr>
+            <tr>
+                <!-- 描述栏 -->
+                <td class="head-td"></td>
+                <#list page.desc as item>
+                    <td class="item-td">
+                        <div style="display: inline-block; float: right; width: 100px;">
+                            <p class="desc-td">
+                                ${item}
+                            </p>
+                        </div>
+                    </td>
+                </#list>
+            </tr>
+        </table>
+        <#--        <p style="width:15px;height:110px;font-size:12px;font-family:IBMPlexSerif-Bold;font-weight:bold;color:rgba(0,0,0,1);line-height:15px;letter-spacing: 2px;">Special-->
+        <#--        </p>-->
+        <table>
+            <tbody>
+            <div style="height:252px; display: inline-block; float: left; background-color: #EBF9FF;">
+                <img width="12px" height="135px" src="/Users/hyp/Desktop/1.jpg" alt=""/>
+            </div>
+            <div style="height:252px; width:6px; display: inline-block; float: left; background-color: white;">
+            </div>
+            <tr class="data-tr-color">
+                <td class="head-td">Offer Price</td>
+                <#list page.offerPrice as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor">
+                <td class="head-td">Rehab Costs</td>
+                <#list page.rehabCosts as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color">
+                <td class="head-td">Estimated Monthly Rent</td>
+                <#list page.estimatedMonthlyRent as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor">
+                <td class="head-td">Yearly Expense</td>
+                <#list page.yearlyExpense as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-small">
+                <td>&nbsp;&nbsp;&nbsp;Property Tax</td>
+                <#list page.propertyTax as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td>&nbsp;&nbsp;&nbsp;Management Fees</td>
+                <#list page.managementFees as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-small">
+                <td>&nbsp;&nbsp;&nbsp;HOA</td>
+                <#list page.hoa as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td>&nbsp;&nbsp;&nbsp;Insurance</td>
+                <#list page.insurance as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-small">
+                <td>&nbsp;&nbsp;&nbsp;Maintenance</td>
+                <#list page.maintenance as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td>&nbsp;&nbsp;&nbsp;Listing Fees</td>
+                <#list page.listingFees as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-small">
+                <td>&nbsp;&nbsp;&nbsp;Vacancy Expense</td>
+                <#list page.vacancyExpense as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td>&nbsp;&nbsp;&nbsp;Capex Reserve
+                    Contribution
+                </td>
+                <#list page.capexReserveContribution as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color">
+                <td class="head-td">Net Operating Income</td>
+                <#list page.netOperatingIncome as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor">
+                <td class="head-td">Cap Rate</td>
+                <#list page.capRate as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <tbody>
+            <div style="height:144px; width: 12px; display: inline-block; float: left; background-color: #EBF5EC;">
+                <img width="12px" height="90px" src="/Users/hyp/Desktop/3.jpg" alt=""/>
+            </div>
+            <div style="height:140px; width:6px; display: inline-block; float: left; background-color: white;">
+            </div>
+            <tr class="data-tr-color-v2">
+                <td class="head-td">Household Income</td>
+                <#list page.income as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor">
+                <td class="head-td" style="height: 18px">Ethnicity</td>
+            </tr>
+            <tr class="data-tr-color-small-v2">
+                <td>&nbsp;&nbsp;&nbsp;Asian</td>
+                <#list page.asian as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td>&nbsp;&nbsp;&nbsp;Black</td>
+                <#list page.black as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-small-v2">
+                <td>&nbsp;&nbsp;&nbsp;Hispanic</td>
+                <#list page.hispanic as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor-small">
+                <td>&nbsp;&nbsp;&nbsp;White</td>
+                <#list page.white as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-v2">
+                <td class="head-td">Population Growth</td>
+                <#list page.pop5yr as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor">
+                <td class="head-td">Bachelor’s Above</td>
+                <#list page.bachelor as item>
+                    <td class="item-td">${item}&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            </tbody>
+        </table>
+
+        <#--        <div style="height: 10px;"></div>-->
+
+        <table>
+            <tbody>
+            <div style="height:55px; width: 12px; display: inline-block; float: left; background-color: #F2F2F7;">
+                <img width="12px" height="55px" src="/Users/hyp/Desktop/4.jpg" alt=""/>
+            </div>
+            <div style="height:55px; width:6px; display: inline-block; float: left; background-color: white;">
+            </div>
+            <tr class="data-tr-color-v3">
+                <td class="head-td">Opportunity Zones</td>
+                <#list page.income as item>
+                    <td class="item-td">Yes&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor">
+                <td class="head-td">Gentrification</td>
+                <#list page.income as item>
+                    <td class="item-td">Yes&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-color-v3">
+                <td class="head-td">Empty-Nesters</td>
+                <#list page.income as item>
+                    <td class="item-td">No&nbsp;&nbsp;</td>
+                </#list>
+            </tr>
+            <tr class="data-tr-nocolor" style="height:18px; font-size:10px; font-family:IBMPlexSans-Medium,IBMP; font-width: 500;">
+                <td colspan="6" style="text-align: right">
+                    Page ${page_index * 2 + 2} of ${contentPage?size * 2}
+                </td>
             </tr>
 
             </tbody>
